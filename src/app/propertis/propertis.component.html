@@ -1,0 +1,99 @@
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="clickAddProp()">Add Listing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/login">LogOut Account</a> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-12 mx-auto my-5 shadow-lg rounded rounded-5 p-5">
+            <div class="mb-4">
+                <h1 class="fs-4 text-primary">Properties Info</h1>
+            </div>
+            <!-- TABLE -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Tittle</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of allProperty">
+                        <th scope="row">{{data.id}}</th>
+                        <td>{{data.ptitle}}</td>
+                        <td>{{data.pprice | currency}}</td>
+                        <td>{{data.plocation}}</td>
+                        <td [width]="300">{{data.pdetails}}</td>
+                        <td>
+                            <a class="btn shadow btn-primary btn_font fw-normal">Edit</a>
+                            <a class="btn shadow btn-success btn_font fw-normal mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">View</a>
+                            <a class="btn shadow btn-primary btn_font fw-normal btn-danger" (click)="deleteProp(data)">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL POP-UP -->
+<div class="modal fade shadow-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Record's Data</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- FORM -->
+                <form [formGroup]="formValue"> 
+                    <div class="mb-3">
+                        <label for="tittle_data" class="form-label">Tittle Data</label>
+                        <input type="email" class="form-control" id="tittle_data" aria-describedby="emailHelp" placeholder="Add Tittle" formControlName="ptitle">
+                        <div id="emailHelp" class="form-text">Must Be Added Title</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price_data" class="form-label">Price</label>
+                        <input type="email" class="form-control" id="price_data" aria-describedby="emailHelp" placeholder="Add Price" formControlName="pprice">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loaction_data" class="form-label">Location</label>
+                        <input type="email" class="form-control" id="location_data" aria-describedby="emailHelp" placeholder="Add Location" formControlName="plocation">
+                    </div>
+                    <div class="mb-3">
+                        <label for="details_data" class="form-label">Details</label>
+                        <input type="email" class="form-control" id="details_data" aria-describedby="emailHelp" placeholder="Add Details" formControlName="pdetails">
+                    </div>
+                    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="clear">Close</button>
+                <button type="button" class="btn btn-primary" (click)="addProp()" *ngIf="showAdd">Add Data</button>
+                <button type="button" class="btn btn-primary" id="delete" *ngIf="showEdit">Delete Data</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{
+  "properties": [
+    {
+      "ptitle": "Tittle 03",
+      "pprice": "23521525",
+      "plocation": "Lahore,Pak",
+      "pdetails": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+      "id": 3
+    }
+  ],
+  "signup": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "mobile": "1234567",
+      "password": "12345"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
