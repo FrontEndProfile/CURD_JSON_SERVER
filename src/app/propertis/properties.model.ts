@@ -1,5 +1,5 @@
 export class property {
-    id!:number;
+    id:string='';
     ptitle:string='';
     pprice:string='';
     plocation:string='';

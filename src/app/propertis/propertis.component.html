@@ -45,8 +45,8 @@
                         <td>{{data.plocation}}</td>
                         <td [width]="300">{{data.pdetails}}</td>
                         <td>
-                            <a class="btn shadow btn-primary btn_font fw-normal">Edit</a>
-                            <a class="btn shadow btn-success btn_font fw-normal mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">View</a>
+                            <a class="btn shadow btn-primary btn_font fw-normal"  data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="updateProp( data)">Edit</a>
+                            <a class="btn shadow btn-success btn_font fw-normal mx-2" (click)="viewBtn()" data-bs-toggle="modal" data-bs-target="#view">View</a>
                             <a class="btn shadow btn-primary btn_font fw-normal btn-danger" (click)="deleteProp(data)">Delete</a>
                         </td>
                     </tr>
@@ -92,7 +92,31 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="clear">Close</button>
                 <button type="button" class="btn btn-primary" (click)="addProp()" *ngIf="showAdd">Add Data</button>
+                <button type="button" class="btn btn-primary" (click)="updatePropadd()" >Update Data</button>
                 <button type="button" class="btn btn-primary" id="delete" *ngIf="showEdit">Delete Data</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL POP-UP VIEW -->
+
+<div class="modal fade shadow-lg" id="view" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Record's Data</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- FORM -->
+                <div>
+                    <h1></h1>
+                </div>
+                
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="clear">Close</button>
             </div>
         </div>
     </div>
