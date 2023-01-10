@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-7 mx-auto my-5 shadow-lg rounded rounded-5 p-5">
            <div class="text-center mb-4">
@@ -8,16 +8,16 @@
             <form > 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Admin Mail">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Admin Mail" [(ngModel)]="loginObj.email" [ngModelOptions]="{standalone: true}">
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Admin Password">
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Admin Password" [(ngModel)]="loginObj.password" [ngModelOptions]="{standalone: true}">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" (click)="onlogin()">Submit</button>
             </form>
             <a routerLink="/signup" class="text-decoration-none text-primary fs-6 mt-4 d-block">Click to Signup Account</a>
         </div>
     </div>
-</div>
+</div> -->
