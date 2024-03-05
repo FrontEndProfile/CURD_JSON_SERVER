@@ -13,30 +13,30 @@ export class PropertyService {
 
   // POST
   addListing(data: any) {
-    return this.http.post('http://localhost:3000/properties', data).pipe(map((res: any) => {
+    return this.http.post('https://curd-json-server.vercel.app/properties', data).pipe(map((res: any) => {
       return res
     }))
   }
   // GET
   getAllProp(data?:any) {
-    return this.http.get('http://localhost:3000/properties', data).pipe(map((res: any) => {
+    return this.http.get('https://curd-json-server.vercel.app/properties', data).pipe(map((res: any) => {
       return res
     }))
   }
   // Update
   updateProp(data: any,id: string): Observable<any> {
-    return this.http.get('http://localhost:3000/properties/'+ id, data)
+    return this.http.get('https://curd-json-server.vercel.app/properties/'+ id, data)
   }
 
   updatePropaddapi(data: any): Observable<any> {
-    return this.http.put('http://localhost:3000/properties/'+ data.id, data)
+    return this.http.put('https://curd-json-server.vercel.app/properties/'+ data.id, data)
   }
   // updateData(data: any, id: string): Observable<any> {
   //   return this.http.patch(`${this.baseURL}/update/${id}`, data)
   // }
   // Delete
   deleteProp(id:number) {
-    return this.http.delete('http://localhost:3000/properties/'+ id).pipe(map((res: any) => {
+    return this.http.delete('https://curd-json-server.vercel.app/properties/'+ id).pipe(map((res: any) => {
       return res
     }))
   }
